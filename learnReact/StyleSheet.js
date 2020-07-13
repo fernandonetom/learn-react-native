@@ -4,7 +4,7 @@ import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
 export default () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Meu texto</Text>
+      <Text style={[styles.title, styles.titleBold]}>Meu texto</Text>
     </SafeAreaView>
   );
 };
@@ -18,5 +18,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
+  },
+  titleBold: {
+    fontWeight: 'bold',
   },
 });
