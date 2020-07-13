@@ -11,7 +11,8 @@ import PropsStates from './components/PropsStates';
 import Button from './components/Button';
 import Condicional from './components/Condicional';
 import Gorjetas from './components/Gorjetas';
+import Keyboard from './components/Keyboard';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Gorjetas);
+AppRegistry.registerComponent(appName, () => Keyboard);
