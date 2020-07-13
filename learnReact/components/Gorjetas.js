@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Text, View, Button, Keyboard} from 'react-native';
 import styled from 'styled-components/native';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
 
 const Page = styled.SafeAreaView`
   flex: 1;
