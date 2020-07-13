@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {Text} from 'react-native';
 import styled from 'styled-components/native';
 
@@ -7,7 +7,8 @@ const Page = styled.SafeAreaView`
 `;
 
 const Hello = (props) => {
-  return <Text>{props.children}</Text>;
+  const [name, setName] = useState('Teste');
+  return <Text>Nome: {name}</Text>;
 };
 
 export default () => {
