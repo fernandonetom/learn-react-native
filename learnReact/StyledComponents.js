@@ -3,14 +3,14 @@ import {SafeAreaView} from 'react-native';
 import styled from 'styled-components/native';
 
 const Texto = styled.Text`
-  color: #ff0000;
+  color: ${(props) => props.cor};
   font-size: 30px;
 `;
 
 export default () => {
   return (
     <SafeAreaView>
-      <Texto>Meu texto</Texto>
+      <Texto cor="red">Meu texto</Texto>
     </SafeAreaView>
   );
 };
