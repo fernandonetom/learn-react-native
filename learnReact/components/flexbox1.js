@@ -8,9 +8,10 @@ const Page = styled.SafeAreaView`
 const Header = styled.View`
   flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   background-color: #333;
   height: 200px;
+  flex-wrap: wrap;
 `;
 const Quadrado = styled.Text`
   background-color: ${(props) => props.cor || '#FFFFFF'};
@@ -23,7 +24,15 @@ export default () => {
     <Page>
       <Header>
         <Quadrado cor="red" />
-        <Quadrado style={{alignSelf: 'flex-start'}} cor="green" />
+        <Quadrado cor="green" />
+        <Quadrado cor="blue" />
+        <Quadrado cor="pink" />
+        <Quadrado cor="red" />
+        <Quadrado cor="green" />
+        <Quadrado cor="blue" />
+        <Quadrado cor="pink" />
+        <Quadrado cor="red" />
+        <Quadrado cor="green" />
         <Quadrado cor="blue" />
         <Quadrado cor="pink" />
       </Header>
