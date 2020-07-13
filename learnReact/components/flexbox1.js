@@ -5,11 +5,13 @@ import styled from 'styled-components/native';
 const Page = styled.SafeAreaView`
   flex: 1;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Quadrado = styled.Text`
   background-color: ${(props) => props.cor || '#FFFFFF'};
-  flex: ${(props) => props.flex || 1};
+  width: 50px;
   height: 50px;
 `;
 
@@ -17,8 +19,9 @@ export default () => {
   return (
     <Page>
       <Quadrado cor="red" />
-      <Quadrado flex={0.5} cor="green" />
-      <Quadrado flex={0.3} cor="blue" />
+      <Quadrado cor="green" />
+      <Quadrado cor="blue" />
+      <Quadrado cor="pink" />
     </Page>
   );
 };
