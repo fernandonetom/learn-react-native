@@ -10,7 +10,8 @@ import FlexBox1 from './components/flexbox1';
 import PropsStates from './components/PropsStates';
 import Button from './components/Button';
 import Condicional from './components/Condicional';
+import Gorjetas from './components/Gorjetas';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Condicional);
+AppRegistry.registerComponent(appName, () => Gorjetas);
