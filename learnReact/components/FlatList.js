@@ -7,12 +7,10 @@ import AddItemArea from './AddItemArea';
 
 const Page = styled.SafeAreaView`
   flex: 1;
-  justify-content: center;
-  align-items: center;
 `;
 const Listagem = styled.FlatList`
   background-color: #fff;
-  width: 100%;
+  flex: 1;
 `;
 const Item = styled.TouchableHighlight`
   padding: 10px;
@@ -25,16 +23,26 @@ const Item = styled.TouchableHighlight`
 
 export default () => {
   const [list, setList] = useState(lista);
+
   const addNewItem = (item) => {
     setList([{task: item, done: false}, ...list]);
+  };
+  const toggleDone = (index) => {
+    let listCopy = [...list];
+    if (listCopy[index].done === 'true') {
+      listCopy[index].done = 'false';
+    } else {
+      listCopy[index].done = 'true';
+    }
+    setList(listCopy);
   };
   return (
     <Page>
       <AddItemArea onAdd={addNewItem} />
       <Listagem
         data={list}
-        renderItem={(item) => {
-          return <ListaItem data={item.item} />;
+        renderItem={({item, index}) => {
+          return <ListaItem data={item} onPress={() => toggleDone(index)} />;
         }}
         keyExtractor={(item, index) => index.toString()}
       />

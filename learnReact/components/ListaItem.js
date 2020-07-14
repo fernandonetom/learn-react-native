@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const Item = styled.TouchableHighlight`
+const Item = styled.TouchableOpacity`
   padding: 20px;
   background-color: #ccc;
   width: 100%;
@@ -19,14 +19,16 @@ const ItemCheck = styled.View`
   height: 20px;
   border-radius: 10px;
   border: 3px solid #0000ff;
+  background-color: ${(props) =>
+    props.done === 'true' ? '#0000ff' : 'transparent'};
 `;
 
 export default (props) => {
   return (
-    <Item onPress={() => {}} underlayColor="#0000FF">
+    <Item onPress={props.onPress}>
       <>
         <ItemText>{props.data.task}</ItemText>
-        <ItemCheck></ItemCheck>
+        <ItemCheck done={props.data.done}></ItemCheck>
       </>
     </Item>
   );
