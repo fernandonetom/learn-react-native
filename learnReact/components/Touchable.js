@@ -18,9 +18,17 @@ const Item = styled.TouchableHighlight`
   margin: 10px;
   width: 80%;
   align-self: center;
+  flex-direction: row;
 `;
 const ItemText = styled.Text`
   font-size: 20px;
+  flex: 1;
+`;
+const ItemCheck = styled.View`
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 3px solid #0000ff;
 `;
 export default () => {
   return (
@@ -28,8 +36,11 @@ export default () => {
       <Scroll>
         {lista.map((item, index) => {
           return (
-            <Item onPress={() => {}} underlayColor="" key={index}>
-              <ItemText>{item.task}</ItemText>
+            <Item onPress={() => {}} underlayColor="#0000FF" key={index}>
+              <>
+                <ItemText>{item.task}</ItemText>
+                <ItemCheck></ItemCheck>
+              </>
             </Item>
           );
         })}
