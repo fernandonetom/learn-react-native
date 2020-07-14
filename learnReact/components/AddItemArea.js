@@ -19,21 +19,16 @@ export default (props) => {
 
   const handleSubmit = () => {
     if (task.trim().length > 0) {
-      props.setList([{task: task.trim(), done: false}, ...props.list]);
+      props.onAdd(task.trim());
+      setTask('');
     } else {
-      Alert.alert(
-        'Erro',
-        'Você deixou sua tarefa em branco',
-        [
-          {
-            text: 'Ok',
-            style: 'cancel',
-          },
-        ],
-        {cancelable: false},
-      );
+      Alert.alert('Tarefa em branco!', '', [
+        {
+          text: 'Ok',
+          style: 'cancel',
+        },
+      ]);
     }
-    setTask('');
   };
   return (
     <AddItemArea>

@@ -25,9 +25,12 @@ const Item = styled.TouchableHighlight`
 
 export default () => {
   const [list, setList] = useState(lista);
+  const addNewItem = (item) => {
+    setList([{task: item, done: false}, ...list]);
+  };
   return (
     <Page>
-      <AddItemArea list={list} setList={setList} />
+      <AddItemArea onAdd={addNewItem} />
       <Listagem
         data={list}
         renderItem={(item) => {
