@@ -13,7 +13,8 @@
     "intl": "^1.2.5",
     "react": "16.13.1",
     "react-native": "0.63.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.10.4",

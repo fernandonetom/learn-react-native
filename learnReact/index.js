@@ -15,7 +15,8 @@ import Keyboard from './components/Keyboard';
 import Image from './components/Image';
 import Lista from './components/Lista';
 import Touchable from './components/Touchable';
+import FlatList from './components/FlatList';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Touchable);
+AppRegistry.registerComponent(appName, () => FlatList);
