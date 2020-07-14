@@ -13,7 +13,8 @@ import Condicional from './components/Condicional';
 import Gorjetas from './components/Gorjetas';
 import Keyboard from './components/Keyboard';
 import Image from './components/Image';
+import Lista from './components/Lista';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Image);
+AppRegistry.registerComponent(appName, () => Lista);
