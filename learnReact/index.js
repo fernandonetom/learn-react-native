@@ -12,7 +12,8 @@ import Button from './components/Button';
 import Condicional from './components/Condicional';
 import Gorjetas from './components/Gorjetas';
 import Keyboard from './components/Keyboard';
+import Image from './components/Image';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Keyboard);
+AppRegistry.registerComponent(appName, () => Image);
