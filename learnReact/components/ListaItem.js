@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Item = styled.TouchableHighlight`
-  padding: 10px;
+  padding: 20px;
   background-color: #ccc;
-  margin: 10px;
-  width: 80%;
+  width: 100%;
   align-self: center;
   flex-direction: row;
+  border-bottom-color: #333;
+  border-bottom-width: 1px;
 `;
 const ItemText = styled.Text`
   font-size: 20px;
