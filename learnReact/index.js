@@ -14,7 +14,8 @@ import Gorjetas from './components/Gorjetas';
 import Keyboard from './components/Keyboard';
 import Image from './components/Image';
 import Lista from './components/Lista';
+import Touchable from './components/Touchable';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Lista);
+AppRegistry.registerComponent(appName, () => Touchable);
