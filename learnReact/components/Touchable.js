@@ -12,7 +12,7 @@ const Scroll = styled.ScrollView`
   background-color: red;
   width: 100%;
 `;
-const Item = styled.TouchableOpacity`
+const Item = styled.TouchableHighlight`
   padding: 10px;
   background-color: #ccc;
   margin: 10px;
@@ -28,7 +28,7 @@ export default () => {
       <Scroll>
         {lista.map((item, index) => {
           return (
-            <Item activeOpacity={0.6} key={index}>
+            <Item onPress={() => {}} underlayColor="" key={index}>
               <ItemText>{item.task}</ItemText>
             </Item>
           );
