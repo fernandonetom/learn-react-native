@@ -1,17 +1,16 @@
 import React, {useState} from 'react';
-import {Image, Text} from 'react-native';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 import lista from './data/data.json';
 import ListaItem from './ListaItem';
 import AddItemArea from './AddItemArea';
+import {SwipeListView} from 'react-native-swipe-list-view';
+import ListaItemSwipe from './ListaItemSwipe';
 
 const Page = styled.SafeAreaView`
   flex: 1;
 `;
-const Listagem = styled.FlatList`
-  background-color: #fff;
-  flex: 1;
-`;
+
 const Item = styled.TouchableHighlight`
   padding: 10px;
   background-color: #eee;
@@ -36,14 +35,36 @@ export default () => {
     }
     setList(listCopy);
   };
+  const deleteItem = (index) => {
+    let listCopy = [...list];
+    listCopy = listCopy.filter((item, indexNew) => {
+      return index != indexNew ? true : false;
+    });
+    setList(listCopy);
+  };
   return (
     <Page>
       <AddItemArea onAdd={addNewItem} />
-      <Listagem
+      <SwipeListView
         data={list}
         renderItem={({item, index}) => {
           return <ListaItem data={item} onPress={() => toggleDone(index)} />;
         }}
+        // renderHiddenItem={({index}) => {
+        //   return <ListaItemSwipe onDelete={() => deleteItem(index)} />;
+        // }}
+        renderHiddenItem={({index}, items) => {
+          return (
+            <ListaItemSwipe
+              onDelete={() => {
+                items[index].closeRow();
+                deleteItem(index);
+              }}
+            />
+          );
+        }}
+        leftOpenValue={100}
+        disableLeftSwipe={true}
         keyExtractor={(item, index) => index.toString()}
       />
     </Page>
