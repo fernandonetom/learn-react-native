@@ -11,7 +11,7 @@ const Page = styled.SafeAreaView`
 export default (props) => {
   const navigation = useNavigation();
   const route = useRoute();
-  const name = route.params?.name ?? 'visitante';
+  const name = route.params.name || 'visitante';
 
   //   const name = props.route.params.name;
   return (

@@ -23,6 +23,7 @@ export default ({navigation}) => {
   const handleSendButton = () => {
     navigation.navigate('Sobre', {
       name,
+      color: 'red',
     });
   };
   return (
