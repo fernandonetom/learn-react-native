@@ -18,7 +18,8 @@ import Touchable from './components/Touchable';
 import FlatList from './components/FlatList';
 import AsyncStorage from './components/AsyncStorage';
 import Modal from './components/Modal';
+import StatusBar from './components/StatusBar';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Modal);
+AppRegistry.registerComponent(appName, () => StatusBar);
