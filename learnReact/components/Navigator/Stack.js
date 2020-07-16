@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 //SCREENS
@@ -19,7 +20,14 @@ export default () => (
         color: '#000',
       },
     }}>
-    <MainStack.Screen name="Styles" component={ChangeStyles} />
+    <MainStack.Screen
+      name="Styles"
+      component={ChangeStyles}
+      options={{
+        headerTitle: () => <Button title="Opa" onPress={() => alert('oi')} />,
+        headerRight: () => <Button title="Opa" onPress={() => alert('oi')} />,
+      }}
+    />
     <MainStack.Screen name="Home" component={Home} />
     <MainStack.Screen name="Sobre" component={About} />
   </MainStack.Navigator>
