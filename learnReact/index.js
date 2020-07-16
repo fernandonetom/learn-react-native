@@ -16,7 +16,8 @@ import Image from './components/Image';
 import Lista from './components/Lista';
 import Touchable from './components/Touchable';
 import FlatList from './components/FlatList';
+import AsyncStorage from './components/AsyncStorage';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FlatList);
+AppRegistry.registerComponent(appName, () => AsyncStorage);
