@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 //SCREENS
 import Home from '../pages/Home';
 import About from '../pages/About';
+import ChangeStyles from '../pages/ChangeStyles';
 
 const MainStack = createStackNavigator();
 
@@ -12,36 +13,14 @@ export default () => (
     screenOptions={{
       headerTitleAlign: 'center',
       headerStyle: {
-        backgroundColor: '#66FF00',
+        backgroundColor: '#66FF',
       },
       headerTitleStyle: {
-        fontSize: 25,
         color: '#000',
       },
     }}>
-    <MainStack.Screen
-      name="Home"
-      component={Home}
-      options={{
-        title: 'Início',
-        headerTitleAlign: 'center',
-        headerStyle: {
-          backgroundColor: '#0000FF',
-          height: 200,
-        },
-        headerTitleStyle: {
-          fontSize: 25,
-          color: '#FFF',
-        },
-      }}
-    />
-    <MainStack.Screen
-      name="Sobre"
-      component={About}
-      options={({route}) => ({
-        title: route.params.name || 'Visitante',
-        headerBackTitle: 'Voltar',
-      })}
-    />
+    <MainStack.Screen name="Styles" component={ChangeStyles} />
+    <MainStack.Screen name="Home" component={Home} />
+    <MainStack.Screen name="Sobre" component={About} />
   </MainStack.Navigator>
 );
