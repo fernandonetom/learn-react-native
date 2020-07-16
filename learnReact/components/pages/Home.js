@@ -7,12 +7,33 @@ const Page = styled.SafeAreaView`
   justify-content: center;
   align-items: center;
 `;
-
-export default () => {
+const Input = styled.TextInput`
+  width: 80%;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+`;
+export default ({navigation}) => {
+  const [name, setName] = useState('');
+  const handleSendButton = () => {
+    navigation.navigate('Sobre', {
+      name,
+    });
+  };
   return (
     <Page>
       <Text>Home page</Text>
-      <Button title="Ir para sobre" />
+      <Input
+        placeholder="Qual o seu nome?"
+        value={name}
+        onChangeText={(text) => setName(text)}
+      />
+      <Button onPress={handleSendButton} title="Enviar" />
     </Page>
   );
 };

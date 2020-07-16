@@ -9,7 +9,7 @@ const MainStack = createStackNavigator();
 
 export default () => (
   <MainStack.Navigator>
-    <MainStack.Screen name="Calculadora" component={Home} />
-    <MainStack.Screen name="Modal page" component={About} />
+    <MainStack.Screen name="Home" component={Home} />
+    <MainStack.Screen name="Sobre" component={About} />
   </MainStack.Navigator>
 );
