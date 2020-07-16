@@ -1,28 +1,15 @@
-import React, {Component} from 'react';
-import {SafeAreaView, Text, StyleSheet} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
 
-export default () => {
-  return (
-    <NavigationContainer>
-      <SafeAreaView style={styles.container}>
-        <Text style={[styles.title, styles.titleBold]}>Meu texto</Text>
-      </SafeAreaView>
-    </NavigationContainer>
-  );
-};
+//SCREENS
+import Home from '../pages/Home';
+import About from '../pages/About';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFF00',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 40,
-  },
-  titleBold: {
-    fontWeight: 'bold',
-  },
-});
+const MainStack = createStackNavigator();
+
+export default () => (
+  <MainStack.Navigator>
+    <MainStack.Screen name="Calculadora" component={Home} />
+    <MainStack.Screen name="Modal page" component={About} />
+  </MainStack.Navigator>
+);
