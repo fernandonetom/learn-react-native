@@ -8,7 +8,17 @@ import About from '../pages/About';
 const MainStack = createStackNavigator();
 
 export default () => (
-  <MainStack.Navigator>
+  <MainStack.Navigator
+    screenOptions={{
+      headerTitleAlign: 'center',
+      headerStyle: {
+        backgroundColor: '#66FF00',
+      },
+      headerTitleStyle: {
+        fontSize: 25,
+        color: '#000',
+      },
+    }}>
     <MainStack.Screen
       name="Home"
       component={Home}
@@ -29,10 +39,8 @@ export default () => (
       name="Sobre"
       component={About}
       options={({route}) => ({
-        title: route.params?.name ?? 'Visitante',
-        headerStyle: {
-          backgroundColor: route.params?.color ?? '#CCC',
-        },
+        title: route.params.name || 'Visitante',
+        headerBackTitle: 'Voltar',
       })}
     />
   </MainStack.Navigator>
