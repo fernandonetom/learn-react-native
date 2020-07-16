@@ -17,7 +17,8 @@ import Lista from './components/Lista';
 import Touchable from './components/Touchable';
 import FlatList from './components/FlatList';
 import AsyncStorage from './components/AsyncStorage';
+import Modal from './components/Modal';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => AsyncStorage);
+AppRegistry.registerComponent(appName, () => Modal);
