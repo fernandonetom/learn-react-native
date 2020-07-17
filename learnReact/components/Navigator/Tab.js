@@ -9,32 +9,29 @@ const Tab = createBottomTabNavigator();
 
 export default () => (
   <Tab.Navigator
-    screenOptions={{
-      tabBarLabel: 'Valor padrão',
-    }}>
-    <Tab.Screen
-      name="TabHome"
-      component={TabHomeScreen}
-      options={{
-        tabBarLabel: 'Página inicial',
-        tabBarIcon: ({focused}) => {
-          return (
-            <Icon name="home" size={20} color={focused ? '#FF0000' : '#333'} />
-          );
-        },
-      }}
-    />
-    <Tab.Screen
-      name="TabAbout"
-      component={TabAboutScreen}
-      options={{
-        tabBarLabel: 'Sobre nós',
-        tabBarIcon: ({focused}) => {
-          return (
-            <Icon name="info" size={20} color={focused ? '#FF0000' : '#333'} />
-          );
-        },
-      }}
-    />
+    screenOptions={({route}) => ({
+      tabBarIcon: ({focused, color, size}) => {
+        let iconName = null;
+        switch (route.name) {
+          case 'TabHome':
+            iconName = 'home';
+            break;
+          case 'TabAbout':
+            iconName = 'info';
+            break;
+          default:
+            break;
+        }
+        return (
+          <Icon
+            name={iconName}
+            size={20}
+            color={focused ? '#ff6666' : '#333'}
+          />
+        );
+      },
+    })}>
+    <Tab.Screen name="TabHome" component={TabHomeScreen} />
+    <Tab.Screen name="TabAbout" component={TabAboutScreen} />
   </Tab.Navigator>
 );
