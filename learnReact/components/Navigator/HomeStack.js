@@ -10,7 +10,10 @@ import Screen3 from '../pages/Screen3';
 const MainStack = createStackNavigator();
 
 export default () => (
-  <MainStack.Navigator>
+  <MainStack.Navigator
+    screenOptions={{
+      header: () => null,
+    }}>
     <MainStack.Screen name="TabHome" component={TabHome} />
     <MainStack.Screen name="Screen2" component={Screen2} />
     <MainStack.Screen name="Screen3" component={Screen3} />

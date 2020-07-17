@@ -34,7 +34,7 @@ export default ({navigation}) => {
         title="Ir para tela 3"
       />
       <Button
-        onPress={() => navigation.navigate('Screen3')}
+        onPress={() => navigation.navigate('TabAbout')}
         title="Ir para tab SOBRE"
       />
       <Button onPress={() => navigation.goBack()} title="Voltar" />
