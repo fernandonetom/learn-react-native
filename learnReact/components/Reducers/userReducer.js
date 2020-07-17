@@ -1,6 +1,6 @@
 const initialState = {
-  name: '',
-  email: '',
+  name: 'Fernando 2 ',
+  email: 'contato@fernandoneto.com.br',
 };
 
 export default (state = initialState, action) => {

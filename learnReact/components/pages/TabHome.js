@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import {Text, Button} from 'react-native';
 import styled from 'styled-components/native';
+import {useNavigation} from '@react-navigation/native';
 
 const Page = styled.SafeAreaView`
   flex: 1;
@@ -18,12 +20,19 @@ const Input = styled.TextInput`
   padding: 10px;
   border-radius: 5px;
 `;
-export default ({navigation}) => {
+const TabHome = (props) => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
 
   return (
     <Page>
-      <Text>Home page</Text>
+      <Text>Home page {props.name}</Text>
+
+      <Input
+        value={props.name}
+        onChangeText={(text) => props.setName(text)}
+        placeholder="Digite seu nome"
+      />
 
       <Button
         onPress={() => navigation.navigate('Screen2')}
@@ -41,3 +50,16 @@ export default ({navigation}) => {
     </Page>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    name: state.userReducer.name,
+    email: state.userReducer.email,
+  };
+};
+const mapDispachToProps = (dispach) => {
+  return {
+    setName: (name) => dispach({type: 'SET_NAME', payload: {name}}),
+  };
+};
+export default connect(mapStateToProps, mapDispachToProps)(TabHome);
