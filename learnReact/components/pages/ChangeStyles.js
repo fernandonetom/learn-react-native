@@ -34,6 +34,15 @@ export default () => {
       title: count,
     });
   }, [count]);
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => <Button title="+1" onPress={handleHeaderPlus} />,
+    });
+  }, []);
+
+  handleHeaderPlus = () => {
+    setCount((c) => c + 1);
+  };
   return (
     <Page>
       <Text>Mudar opções pelo componente</Text>

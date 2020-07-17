@@ -20,14 +20,7 @@ export default () => (
         color: '#000',
       },
     }}>
-    <MainStack.Screen
-      name="Styles"
-      component={ChangeStyles}
-      options={{
-        headerTitle: () => <Button title="Opa" onPress={() => alert('oi')} />,
-        headerRight: () => <Button title="Opa" onPress={() => alert('oi')} />,
-      }}
-    />
+    <MainStack.Screen name="Styles" component={ChangeStyles} />
     <MainStack.Screen name="Home" component={Home} />
     <MainStack.Screen name="Sobre" component={About} />
   </MainStack.Navigator>
