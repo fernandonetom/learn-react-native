@@ -26,12 +26,34 @@ export default () => (
           <Icon
             name={iconName}
             size={20}
-            color={focused ? '#ff6666' : '#333'}
+            color={focused ? '#0000dd' : '#333'}
           />
         );
       },
-    })}>
-    <Tab.Screen name="TabHome" component={TabHomeScreen} />
-    <Tab.Screen name="TabAbout" component={TabAboutScreen} />
+    })}
+    //lazy={true}
+    tabBarOptions={{
+      //   activeTintColor: '#ff0000',
+      //   activeBackgroundColor: '#ccc',
+      //   style: {
+      //     height: 150,
+      //   },
+      //   labelPosition: 'beside-icon',
+      keyboardHidesTabBar: true,
+    }}>
+    <Tab.Screen
+      name="TabHome"
+      component={TabHomeScreen}
+      options={{
+        tabBarLabel: 'Página inicial',
+      }}
+    />
+    <Tab.Screen
+      name="TabAbout"
+      component={TabAboutScreen}
+      options={{
+        tabBarLabel: 'Sobre nós',
+      }}
+    />
   </Tab.Navigator>
 );
