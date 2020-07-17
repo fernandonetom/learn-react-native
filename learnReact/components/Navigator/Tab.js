@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import TabHomeScreen from '../pages/TabHome';
+import HomeStack from './HomeStack';
 import TabAboutScreen from '../pages/TabAbout';
 import Icon from 'react-native-vector-icons/Feather';
 Icon.loadFont();
@@ -43,7 +43,7 @@ export default () => (
     }}>
     <Tab.Screen
       name="TabHome"
-      component={TabHomeScreen}
+      component={HomeStack}
       options={{
         tabBarLabel: 'Página inicial',
       }}
